@@ -1,5 +1,5 @@
 # WeTube
 
-## This is a Junior Full Stack Course from Nomad Coder
+## This is a private practice for Junior Full Stack Course of Nomad Coder
 
 Cloning Youtube with Vanilla and NodeJS
