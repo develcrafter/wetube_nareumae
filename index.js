@@ -17,7 +17,7 @@ const handleListening = () =>
 
 const handleHome = (req, res) => {
   console.log("homepage");
-  res.send("Hello, this is Home!\n Thank you to come here");
+  res.send("Hello, this is Home!\n Thank you to come");
 };
 
 app.get("/", handleHome);
