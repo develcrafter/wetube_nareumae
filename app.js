@@ -3,7 +3,9 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import { userRouter } from "./router";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
+import globalRouter from "./routers/globalRouter";
 
 
 const app = express();
@@ -29,18 +31,23 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 //router?
-const handleHome = (req, res) => {
-  console.log("/root");
-  res.send("Hello, this is Home!\n Thank you to come");
-};
 
-app.get("/", handleHome);
+app.use("/", globalRouter);
+app.use("/users", userRouter);
+app.use("/videos", videoRouter);
 
-const handleProfile = (req, res) => res.send("This is profile page, maybe!");
+// const handleHome = (req, res) => {
+//   console.log("/root");
+//   res.send("Hello, this is Home!\n Thank you to come");
+// };
 
-app.get("/profile", handleProfile);
+// app.get("/", handleHome);
 
-app.use("/user", userRouter);
+// const handleProfile = (req, res) => res.send("This is profile page, maybe!");
+
+// app.get("/profile", handleProfile);
+
+// app.use("/user", userRouter);
 
 // app.listen(PORT, handleListening); => move to init.js
 
