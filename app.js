@@ -22,6 +22,9 @@ const app = express();
 //   res.send("Hello, this is Home!");
 // }
 
+//setting
+
+app.set("view engine", "pug");
 //middleware
 
 app.use(cookieParser());
